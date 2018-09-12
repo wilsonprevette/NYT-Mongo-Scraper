@@ -1,0 +1,29 @@
+<h1>Mongo Article Scraper</h1>
+
+<button type="button" class="btn btn-primary" id="scrape">Scrape!</button>
+<button type="button" class="btn btn-danger" id="clear">Clear!</button>
+<br>
+<h2>Articles</h2>
+<hr>
+<div id="container">
+    <div id="articles">
+        {{#if article}}
+            {{#each article}}
+            <div class="item">
+                <div class="headline">
+                    <h4>{{this.title}}</h4>
+                </div>
+                <div class="summary">
+                    <p>{{this.desc}}</p>
+                    <a href="{{this.link}}">Link</a>
+                    <br><br>
+                    <button type="button" class="btn btn-primary save" data-id="{{this.id}}" id="save">Save</button>
+                </div>
+            </div>
+            <hr>
+            {{/each}}
+        {{else}}
+        <h5>No new articles :(</h5>
+        {{/if}}
+    </div>
+</div>
